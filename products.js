@@ -386,6 +386,9 @@
       grid.innerHTML = list.map(cardHTML).join("");
       if (window.I18n) window.I18n.applyTo(grid);
       attachCardHandlers(grid);
+      requestAnimationFrame(() => {
+        grid.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+      });
     });
   }
 

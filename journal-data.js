@@ -169,6 +169,9 @@
         </div>
       </a>
     `).join("");
+    requestAnimationFrame(() => {
+      root.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+    });
   }
 
   /* ---------- Single post renderer ---------- */
