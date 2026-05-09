@@ -16,14 +16,14 @@
 
   <link rel="stylesheet" href="styles.css" />
   <script>
-    // Map of broken URLs to replacement URLs  
+    // Map of broken URLs to reliable replacements
     const IMG_REPLACEMENTS = {
-      'photo-1616627562650-86eaeae3d72e': 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80&auto=format&fit=crop',
-      'photo-1632322474318-bedb31a2b8b1': 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=1200&q=80&auto=format&fit=crop',
-      'photo-1567538096630-e0c55bd6374c': 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80&auto=format&fit=crop',
-      'photo-1517445312882-bc9910d016b7': 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=900&q=80&auto=format&fit=crop',
-      'photo-1583394293214-28ded15ee548': 'https://images.unsplash.com/photo-1595951707802-6b2b55a42c0a?w=900&q=80&auto=format&fit=crop',
-      'photo-1604061986761-d9d0cc41b0d1': 'https://images.unsplash.com/photo-1616627562650-86eaeae3d72e?w=900&q=80&auto=format&fit=crop'
+      'photo-1616627562650-86eaeae3d72e': 'https://picsum.photos/1200/800?random=1',
+      'photo-1632322474318-bedb31a2b8b1': 'https://picsum.photos/1200/800?random=2',
+      'photo-1567538096630-e0c55bd6374c': 'https://picsum.photos/900/600?random=3',
+      'photo-1517445312882-bc9910d016b7': 'https://picsum.photos/900/600?random=4',
+      'photo-1583394293214-28ded15ee548': 'https://picsum.photos/900/600?random=5',
+      'photo-1604061986761-d9d0cc41b0d1': 'https://picsum.photos/900/600?random=6'
     };
 
     // Replace broken URLs before page loads
@@ -34,7 +34,7 @@
             img.src = replacement;
           }
         }
-        // Add error handler as backup
+        // Add error handler as backup with SVG placeholder
         img.addEventListener('error', function() {
           for (const [broken, replacement] of Object.entries(IMG_REPLACEMENTS)) {
             if (this.src.includes(broken)) {
@@ -42,7 +42,8 @@
               return;
             }
           }
-          this.style.backgroundColor = '#e8dcc8';
+          // Final fallback: SVG placeholder
+          this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23e8dcc8" width="800" height="600"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%23666" font-size="24" font-family="Arial"%3EImage unavailable%3C/text%3E%3C/svg%3E';
           this.style.minHeight = '200px';
         });
       });
