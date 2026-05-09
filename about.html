@@ -12,34 +12,45 @@
 
   <link rel="stylesheet" href="styles.css" />
   <script>
-    // Image error handler - replace broken images with working alternatives
-    window.addEventListener('load', () => {
+    // Map of broken URLs to replacement URLs  
+    const IMG_REPLACEMENTS = {
+      'photo-1616627562650-86eaeae3d72e': 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80&auto=format&fit=crop',
+      'photo-1632322474318-bedb31a2b8b1': 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=1200&q=80&auto=format&fit=crop',
+      'photo-1567538096630-e0c55bd6374c': 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80&auto=format&fit=crop',
+      'photo-1517445312882-bc9910d016b7': 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=900&q=80&auto=format&fit=crop',
+      'photo-1583394293214-28ded15ee548': 'https://images.unsplash.com/photo-1595951707802-6b2b55a42c0a?w=900&q=80&auto=format&fit=crop',
+      'photo-1604061986761-d9d0cc41b0d1': 'https://images.unsplash.com/photo-1616627562650-86eaeae3d72e?w=900&q=80&auto=format&fit=crop'
+    };
+
+    // Replace broken URLs before page loads
+    function replaceImageURLs() {
       document.querySelectorAll('img').forEach(img => {
+        for (const [broken, replacement] of Object.entries(IMG_REPLACEMENTS)) {
+          if (img.src.includes(broken)) {
+            img.src = replacement;
+          }
+        }
+        // Add error handler as backup
         img.addEventListener('error', function() {
-          // Map of broken URLs to replacement URLs
-          const replacements = {
-            'photo-1616627562650-86eaeae3d72e': 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80&auto=format&fit=crop',
-            'photo-1632322474318-bedb31a2b8b1': 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=1200&q=80&auto=format&fit=crop',
-            'photo-1567538096630-e0c55bd6374c': 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80&auto=format&fit=crop',
-            'photo-1517445312882-bc9910d016b7': 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=900&q=80&auto=format&fit=crop',
-            'photo-1583394293214-28ded15ee548': 'https://images.unsplash.com/photo-1595951707802-6b2b55a42c0a?w=900&q=80&auto=format&fit=crop',
-            'photo-1604061986761-d9d0cc41b0d1': 'https://images.unsplash.com/photo-1616627562650-86eaeae3d72e?w=900&q=80&auto=format&fit=crop'
-          };
-          
-          for (const [broken, replacement] of Object.entries(replacements)) {
+          for (const [broken, replacement] of Object.entries(IMG_REPLACEMENTS)) {
             if (this.src.includes(broken)) {
               this.src = replacement;
               return;
             }
           }
-          
-          // If no specific replacement, use a placeholder
           this.style.backgroundColor = '#e8dcc8';
           this.style.minHeight = '200px';
-          this.alt = this.alt || 'Image';
         });
       });
-    });
+    }
+
+    // Run when DOM is ready and on load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', replaceImageURLs);
+    } else {
+      replaceImageURLs();
+    }
+    window.addEventListener('load', replaceImageURLs);
   </script>
   <script src="i18n.js" defer></script>
   <script src="script.js" defer></script>
