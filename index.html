@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assam Furniture House — Boutique Premium Furniture in Kampur, Nagaon</title>
+  <meta name="description" content="Hand-crafted solid wood furniture from Kampur, Assam. 25+ years of craftsmanship, 0% EMI, free delivery in Nagaon district. Bedroom, living, dining, wedding furniture — bespoke and ready-made." />
+  <meta property="og:title" content="Assam Furniture House — Boutique Premium" />
+  <meta property="og:description" content="Hand-crafted solid wood furniture from Kampur, Assam." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="i18n.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="cart.js" defer></script>
+  <script src="products.js" defer></script>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-inner">
+      <div class="loader-mark">AFH</div>
+      <div class="loader-line"></div>
+    </div>
+  </div>
+
+  <!-- Page transition -->
+  <div class="page-transition" id="pageTransition"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <p class="topbar-msg" data-i18n="topbar.msg">Free delivery in Nagaon district · 0% EMI up to 24 months · 25+ years of craftsmanship</p>
+      </div>
+    </div>
+    <nav class="navbar" id="navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="brand" aria-label="Assam Furniture House home">
+          <span class="brand-mark">AFH</span>
+          <span class="brand-name">
+            <span data-i18n="brand.name">Assam Furniture House</span>
+            <small data-i18n="brand.tag">Boutique · Kampur</small>
+          </span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+          <li><a href="studio.html" data-i18n="nav.studio">Studio</a></li>
+          <li><a href="journal.html" data-i18n="nav.journal">Journal</a></li>
+          <li><a href="visit.html" data-i18n="nav.visit">Visit</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+            <span data-lang="en" class="on">EN</span>
+            <span class="sep">|</span>
+            <span data-lang="as">অস</span>
+          </button>
+          <a href="cart.html#wishlist" class="cart-pill" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
+            <span class="count" data-wishlist-count>0</span>
+          </a>
+          <a href="cart.html" class="cart-pill" aria-label="Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h2l3 12h11l3-9H6"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
+            <span class="count" data-cart-count>0</span>
+          </a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow" data-i18n="hero.eyebrow">Heritage Craftsmanship · Since 1998</span>
+            <h1>
+              <span data-i18n="hero.title_1">Furniture</span>
+              <em data-i18n="hero.title_em">made for memories</em>
+            </h1>
+            <p class="lead" data-i18n="hero.lead">Hand-crafted solid wood furniture from the heart of Assam — bespoke pieces for the families of Nagaon, Kampur and beyond.</p>
+            <div class="hero-ctas">
+              <a href="products.html" class="btn btn-primary btn-lg" data-i18n="hero.cta_primary">Browse Collection</a>
+              <a href="visit.html" class="btn btn-outline btn-lg" data-i18n="hero.cta_secondary">Book a Showroom Visit</a>
+            </div>
+            <div class="hero-chips">
+              <div class="hero-chip">
+                <span class="hero-chip-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+                </span>
+                <span class="hero-chip-text">
+                  <strong data-i18n="hero.chip_warranty_t">5-Year Warranty</strong>
+                  <span data-i18n="hero.chip_warranty_s">On every solid wood piece</span>
+                </span>
+              </div>
+              <div class="hero-chip">
+                <span class="hero-chip-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20"/></svg>
+                </span>
+                <span class="hero-chip-text">
+                  <strong data-i18n="hero.chip_emi_t">0% EMI</strong>
+                  <span data-i18n="hero.chip_emi_s">Up to 24 months</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual reveal reveal-delay-1">
+            <span class="hero-badge" data-i18n="hero.badge">Boutique Premium</span>
+            <img src="https://images.unsplash.com/photo-1616627562650-86eaeae3d72e?w=1200&q=80&auto=format&fit=crop" alt="Handcrafted bedroom interior" loading="eager">
+            <div class="hero-floating-card">
+              <div>
+                <span class="stars">★★★★★</span>
+                <strong data-i18n="hero.floating_t">1,200+ happy families</strong>
+                <span data-i18n="hero.floating_s">across Nagaon district</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="sections.categories_eyebrow">Shop by Room</span>
+          <h2 data-i18n="sections.categories_title">Curated for every space</h2>
+          <span class="divider-flourish"></span>
+          <p data-i18n="sections.categories_lead">From candid bedrooms to grand wedding mandaps, find pieces tailored to the rhythm of your home.</p>
+        </div>
+        <div class="cat-grid">
+          <a href="products.html?cat=bedroom" class="cat-card reveal">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=600&q=80&auto=format&fit=crop" alt="Bedroom" loading="lazy">
+            <div class="cat-card-label">
+              <span data-i18n="categories.bedroom">Bedroom</span>
+              <small data-i18n="categories.bedroom_s">Beds, side tables</small>
+            </div>
+          </a>
+          <a href="products.html?cat=living" class="cat-card reveal reveal-delay-1">
+            <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80&auto=format&fit=crop" alt="Living" loading="lazy">
+            <div class="cat-card-label">
+              <span data-i18n="categories.living">Living</span>
+              <small data-i18n="categories.living_s">Sofas, coffee tables</small>
+            </div>
+          </a>
+          <a href="products.html?cat=dining" class="cat-card reveal reveal-delay-2">
+            <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80&auto=format&fit=crop" alt="Dining" loading="lazy">
+            <div class="cat-card-label">
+              <span data-i18n="categories.dining">Dining</span>
+              <small data-i18n="categories.dining_s">Tables, chairs</small>
+            </div>
+          </a>
+          <a href="products.html?cat=study" class="cat-card reveal reveal-delay-3">
+            <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&q=80&auto=format&fit=crop" alt="Study" loading="lazy">
+            <div class="cat-card-label">
+              <span data-i18n="categories.study">Study</span>
+              <small data-i18n="categories.study_s">Desks, shelves</small>
+            </div>
+          </a>
+          <a href="products.html?cat=wardrobe" class="cat-card reveal">
+            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&q=80&auto=format&fit=crop" alt="Wardrobe" loading="lazy">
+            <div class="cat-card-label">
+              <span data-i18n="categories.wardrobe">Wardrobe</span>
+              <small data-i18n="categories.wardrobe_s">Almirahs, sliding</small>
+            </div>
+          </a>
+          <a href="products.html?cat=wedding" class="cat-card reveal reveal-delay-1">
+            <img src="https://images.unsplash.com/photo-1632322474318-bedb31a2b8b1?w=600&q=80&auto=format&fit=crop" alt="Wedding" loading="lazy">
+            <div class="cat-card-label">
+              <span data-i18n="categories.wedding">Wedding</span>
+              <small data-i18n="categories.wedding_s">Thrones, mandaps</small>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bestsellers -->
+    <section style="background: var(--bg-soft);">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="sections.bestsellers_eyebrow">This Season</span>
+          <h2 data-i18n="sections.bestsellers_title">Bestsellers</h2>
+          <span class="divider-flourish"></span>
+          <p data-i18n="sections.bestsellers_lead">What our families have been bringing home this month.</p>
+        </div>
+        <div class="product-grid" data-products="featured" data-limit="8"></div>
+        <div style="text-align: center; margin-top: var(--s-7);">
+          <a href="products.html" class="btn btn-outline btn-lg">View all products →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit teaser -->
+    <section class="visit-teaser">
+      <div class="container">
+        <div class="visit-grid">
+          <div class="visit-img reveal">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80&auto=format&fit=crop" alt="Showroom interior" loading="lazy">
+          </div>
+          <div class="reveal reveal-delay-1">
+            <span class="eyebrow" data-i18n="sections.visit_eyebrow">Step Inside</span>
+            <h2 data-i18n="sections.visit_title">Visit our showroom</h2>
+            <p data-i18n="sections.visit_lead">Pick a date, a time, and the rooms you're dreaming about. We'll set tea, your seat, and the pieces you want to see.</p>
+            <div class="visit-points">
+              <div class="visit-point">
+                <span class="visit-point-num">1</span>
+                <div>
+                  <strong data-i18n="sections.visit_p1_t">Pick your date</strong>
+                  <span data-i18n="sections.visit_p1_s">Open Mon–Sat. Choose any slot in the next 14 days.</span>
+                </div>
+              </div>
+              <div class="visit-point">
+                <span class="visit-point-num">2</span>
+                <div>
+                  <strong data-i18n="sections.visit_p2_t">Tell us your taste</strong>
+                  <span data-i18n="sections.visit_p2_s">Bedroom, dining, wedding — we'll prep the right corner.</span>
+                </div>
+              </div>
+              <div class="visit-point">
+                <span class="visit-point-num">3</span>
+                <div>
+                  <strong data-i18n="sections.visit_p3_t">Sip tea, take your time</strong>
+                  <span data-i18n="sections.visit_p3_s">No commission rush. Walk our floor for as long as you like.</span>
+                </div>
+              </div>
+            </div>
+            <a href="visit.html" class="btn btn-primary" data-i18n="sections.visit_cta">Schedule a visit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMI banner with mini-calc -->
+    <section class="emi-banner">
+      <div class="container">
+        <div class="emi-grid">
+          <div class="reveal">
+            <span class="eyebrow" style="color: var(--brass-light);" data-i18n="sections.emi_eyebrow">Easy Ownership</span>
+            <h2>
+              <span data-i18n="sections.emi_title">Take it home today,</span>
+              <em data-i18n="sections.emi_title_em">pay across 24 months</em>
+            </h2>
+            <p class="lead" data-i18n="sections.emi_lead">Spread the cost of any piece above ₹15,000 with our zero-interest EMI plans. No paperwork. No processing fee. Just a friendly conversation at the showroom.</p>
+            <div class="emi-highlights">
+              <div class="emi-h">
+                <strong data-i18n="sections.emi_h1_t">0%</strong>
+                <span data-i18n="sections.emi_h1_s">Interest</span>
+              </div>
+              <div class="emi-h">
+                <strong data-i18n="sections.emi_h2_t">24 mo</strong>
+                <span data-i18n="sections.emi_h2_s">Tenure</span>
+              </div>
+              <div class="emi-h">
+                <strong data-i18n="sections.emi_h3_t">₹0</strong>
+                <span data-i18n="sections.emi_h3_s">Down payment</span>
+              </div>
+            </div>
+          </div>
+          <div class="emi-mini-calc reveal reveal-delay-1">
+            <label data-i18n="sections.emi_calc_label">Slide to see your monthly instalment</label>
+            <input type="range" id="emiMiniSlider" min="15000" max="200000" step="500" value="60000">
+            <div class="value" id="emiMiniValue">₹60,000</div>
+            <div class="emi-result">
+              <span data-i18n="sections.emi_calc_per_month">per month</span>
+              <strong id="emiMiniResult">₹5,000</strong>
+              <span data-i18n="sections.emi_calc_tenure">over 12 months</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="story-strip">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-img reveal">
+            <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=900&q=80&auto=format&fit=crop" alt="Workshop detail" loading="lazy">
+          </div>
+          <div class="reveal reveal-delay-1">
+            <span class="eyebrow" data-i18n="sections.story_eyebrow">Our Workshop</span>
+            <h2 data-i18n="sections.story_title">Twenty-five winters at the lathe</h2>
+            <p data-i18n="sections.story_p">Three generations of the Bordoloi family have been shaping teak, sheesham and Hollong from a single workshop on the banks of the Kolong river. Every joint is hand-cut. Every finish is hand-rubbed. Nothing leaves the floor until our father is satisfied.</p>
+            <div class="story-meta">
+              <div>
+                <strong data-i18n="sections.story_meta_1_t">25+ Years</strong>
+                <span data-i18n="sections.story_meta_1_s">of woodcraft</span>
+              </div>
+              <div>
+                <strong data-i18n="sections.story_meta_2_t">12 artisans</strong>
+                <span data-i18n="sections.story_meta_2_s">in our workshop</span>
+              </div>
+              <div>
+                <strong data-i18n="sections.story_meta_3_t">100% solid wood</strong>
+                <span data-i18n="sections.story_meta_3_s">no veneers</span>
+              </div>
+            </div>
+            <a href="about.html" class="btn btn-ghost" style="margin-top: var(--s-5);">Read our story →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journal teaser -->
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="sections.journal_eyebrow">Journal</span>
+          <h2 data-i18n="sections.journal_title">Stories from the workshop</h2>
+          <span class="divider-flourish"></span>
+          <p data-i18n="sections.journal_lead">Notes on wood, weddings and the ways our customers make a house their own.</p>
+        </div>
+        <div class="journal-grid">
+          <a href="journal-post.html?slug=teak-vs-sheesham" class="journal-card reveal">
+            <div class="journal-card-img">
+              <img src="https://images.unsplash.com/photo-1517445312882-bc9910d016b7?w=900&q=80&auto=format&fit=crop" alt="Teak vs Sheesham" loading="lazy">
+            </div>
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <span class="tag">Wood Notes</span>
+                <span>· 6 min read</span>
+              </div>
+              <h3>Teak vs Sheesham — choosing wood for Assam's humidity</h3>
+              <p>Why our grandparents chose teak, why we still recommend it, and when sheesham is the better answer.</p>
+              <span class="read-more" data-i18n="sections.journal_more">Read more →</span>
+            </div>
+          </a>
+          <a href="journal-post.html?slug=wedding-buying-guide" class="journal-card reveal reveal-delay-1">
+            <div class="journal-card-img">
+              <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=900&q=80&auto=format&fit=crop" alt="Wedding furniture" loading="lazy">
+            </div>
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <span class="tag">Weddings</span>
+                <span>· 8 min read</span>
+              </div>
+              <h3>Wedding furniture buying guide for Kampur families</h3>
+              <p>What to budget, what to keep heirloom, and which pieces always come with the bride.</p>
+              <span class="read-more" data-i18n="sections.journal_more">Read more →</span>
+            </div>
+          </a>
+          <a href="journal-post.html?slug=monsoon-care" class="journal-card reveal reveal-delay-2">
+            <div class="journal-card-img">
+              <img src="https://images.unsplash.com/photo-1604061986761-d9d0cc41b0d1?w=900&q=80&auto=format&fit=crop" alt="Monsoon care" loading="lazy">
+            </div>
+            <div class="journal-card-body">
+              <div class="journal-card-meta">
+                <span class="tag">Care</span>
+                <span>· 5 min read</span>
+              </div>
+              <h3>Caring for solid wood through the Assam monsoon</h3>
+              <p>A short, practical checklist for the four months when furniture earns its keep.</p>
+              <span class="read-more" data-i18n="sections.journal_more">Read more →</span>
+            </div>
+          </a>
+        </div>
+        <div style="text-align: center; margin-top: var(--s-7);">
+          <a href="journal.html" class="btn btn-outline" data-i18n="sections.journal_all">All articles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="sections.testimonials_eyebrow">Kind Words</span>
+          <h2 data-i18n="sections.testimonials_title">What our families say</h2>
+          <span class="divider-flourish"></span>
+        </div>
+        <div class="tcarousel reveal">
+          <div class="tslide active">
+            <p class="tquote">The wedding throne pair we ordered for our daughter's marriage in 2019 still looks like the day it left the workshop. Our son will use it next year. That is a piece of furniture worth its price.</p>
+            <div class="tperson">
+              <div class="tperson-avatar">DK</div>
+              <div class="tperson-info">
+                <strong>Dipanjali Kakoti</strong>
+                <span>Tezpur, Assam</span>
+              </div>
+            </div>
+          </div>
+          <div class="tslide">
+            <p class="tquote">I asked Hiren-da for a study desk that would last my son through engineering college. Five years later it has survived two re-paintings of the room and looks better than the day it arrived.</p>
+            <div class="tperson">
+              <div class="tperson-avatar">RB</div>
+              <div class="tperson-info">
+                <strong>Ritu Borah</strong>
+                <span>Nagaon, Assam</span>
+              </div>
+            </div>
+          </div>
+          <div class="tslide">
+            <p class="tquote">We compared three furniture shops in Guwahati before driving to Kampur. The price was lower, the wood was better, and they let us walk the workshop. We have been customers for eight years now.</p>
+            <div class="tperson">
+              <div class="tperson-avatar">PS</div>
+              <div class="tperson-info">
+                <strong>Pranjal Saikia</strong>
+                <span>Guwahati, Assam</span>
+              </div>
+            </div>
+          </div>
+          <div class="tslide">
+            <p class="tquote">The free EMI saved us. We took home a full bedroom set during my daughter's first job — paid it off in twelve months without a rupee of extra cost. The Bordolois are honest people.</p>
+            <div class="tperson">
+              <div class="tperson-avatar">AM</div>
+              <div class="tperson-info">
+                <strong>Anjali Medhi</strong>
+                <span>Jorhat, Assam</span>
+              </div>
+            </div>
+          </div>
+          <div class="tdots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="sections.stats_eyebrow">By the Numbers</span>
+          <h2 data-i18n="sections.stats_title">A quiet record of trust</h2>
+          <span class="divider-flourish"></span>
+        </div>
+        <div class="stats-row">
+          <div class="stat reveal">
+            <div class="num"><span data-count="27">0</span><span class="plus">+</span></div>
+            <div class="label" data-i18n="sections.stat_years">Years</div>
+          </div>
+          <div class="stat reveal reveal-delay-1">
+            <div class="num"><span data-count="1200">0</span><span class="plus">+</span></div>
+            <div class="label" data-i18n="sections.stat_families">Families</div>
+          </div>
+          <div class="stat reveal reveal-delay-2">
+            <div class="num"><span data-count="4800">0</span><span class="plus">+</span></div>
+            <div class="label" data-i18n="sections.stat_pieces">Pieces delivered</div>
+          </div>
+          <div class="stat reveal reveal-delay-3">
+            <div class="num"><span data-count="12">0</span></div>
+            <div class="label" data-i18n="sections.stat_artisans">Artisans</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA banner -->
+    <section style="padding: var(--s-7) 0;">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>
+            <span data-i18n="sections.cta_title">Design your home with us</span>
+            <em data-i18n="sections.cta_em">we will be your guide</em>
+          </h2>
+          <p data-i18n="sections.cta_lead">Tell us a little about your space and your taste — we'll send a friendly plan and a no-obligation quote within a day.</p>
+          <a href="studio.html" class="btn btn-brass btn-lg" data-i18n="sections.cta_btn">Start your plan</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark">AFH</span>
+            <span class="brand-name">
+              <span data-i18n="brand.name">Assam Furniture House</span>
+              <small data-i18n="brand.tag">Boutique · Kampur</small>
+            </span>
+          </a>
+          <p data-i18n="footer.tagline">Hand-crafted solid wood furniture from Kampur, Assam — for the families that build homes to last.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.shop">Shop</h4>
+          <ul>
+            <li><a href="products.html?cat=bedroom" data-i18n="categories.bedroom">Bedroom</a></li>
+            <li><a href="products.html?cat=living" data-i18n="categories.living">Living</a></li>
+            <li><a href="products.html?cat=dining" data-i18n="categories.dining">Dining</a></li>
+            <li><a href="products.html?cat=study" data-i18n="categories.study">Study</a></li>
+            <li><a href="products.html?cat=wardrobe" data-i18n="categories.wardrobe">Wardrobe</a></li>
+            <li><a href="products.html?cat=wedding" data-i18n="categories.wedding">Wedding</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <ul>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="studio.html" data-i18n="nav.studio">Studio</a></li>
+            <li><a href="journal.html" data-i18n="nav.journal">Journal</a></li>
+            <li><a href="visit.html" data-i18n="nav.visit">Visit</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+            <li><a href="cart.html" data-i18n="nav.cart">Cart</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <h4 data-i18n="footer.stay">Stay in touch</h4>
+          <p style="font-size: 0.88rem; margin-bottom: var(--s-3);" data-i18n="footer.newsletter_p">Sign up for seasonal collections and journal notes.</p>
+          <form id="newsletterForm">
+            <input type="email" required placeholder="Your email" data-i18n-placeholder="footer.newsletter_ph">
+            <button type="submit" class="btn btn-brass btn-block btn-sm" data-i18n="footer.newsletter_btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.rights">© 2026 Assam Furniture House. All rights reserved.</span>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.6c0-.9.3-1.5 1.6-1.5H17V4.4c-.4 0-1.4-.1-2.5-.1-2.5 0-4 1.5-4 4.2v2H8v3h2.5V21z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.3c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.6 14.4c-.2.6-1.3 1.2-1.8 1.3-.5.1-1.1.1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.2.5-.3.8-.3h.5c.2 0 .4 0 .6.5.2.6.7 2 .8 2.1.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.1-.3.3-.4.4-.1.1-.3.3-.1.5.1.3.7 1.1 1.5 1.8 1 .9 1.9 1.2 2.2 1.4.3.1.4.1.6-.1.2-.2.7-.8.8-1 .2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+        </div>
+        <span data-i18n="footer.built">Boutique Premium · Tier 4 demo</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919876543210?text=Hello%20Assam%20Furniture%20House" class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.3c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm5.6 14.4c-.2.6-1.3 1.2-1.8 1.3-.5.1-1.1.1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.2.5-.3.8-.3h.5c.2 0 .4 0 .6.5.2.6.7 2 .8 2.1.1.1.1.3 0 .5-.1.2-.1.3-.3.5-.1.1-.3.3-.4.4-.1.1-.3.3-.1.5.1.3.7 1.1 1.5 1.8 1 .9 1.9 1.2 2.2 1.4.3.1.4.1.6-.1.2-.2.7-.8.8-1 .2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+  </a>
+
+</body>
+</html>
